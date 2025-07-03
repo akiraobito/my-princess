@@ -1,0 +1,148 @@
+html, body {
+  margin: 0; padding: 0; height: 100%; overflow: hidden;
+  font-family: 'Khmer OS Battambang', sans-serif;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #fcb69f);
+  background-size: 500% 500%;
+  animation: pinkBG 15s ease infinite;
+  position: relative;
+}
+
+@keyframes pinkBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.marquee {
+  position: absolute;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px #d64585;
+  z-index: 0;
+}
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scrollText 20s linear infinite;
+}
+@keyframes scrollText {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+.line1 { top: 10%; }
+.line2 { top: 25%; animation-delay: 5s; }
+.line3 { top: 40%; animation-delay: 10s; }
+.line4 { top: 55%; animation-delay: 15s; }
+.line5 { top: 70%; animation-delay: 20s; }
+
+.floating-photo {
+  position: absolute;
+  width: 80px;
+  height: auto;
+  border: 2px solid #ff69b4;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #ff1493;
+  z-index: 1;
+  animation-timing-function: ease-in-out;
+  opacity: 0.9;
+}
+
+/* Animation direction styles */
+@keyframes fallDownRight {
+  0% { transform: translateX(0) translateY(-100px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100px) translateY(110vh); opacity: 0; }
+}
+@keyframes fallDownLeft {
+  0% { transform: translateX(0) translateY(-100px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(-100px) translateY(110vh); opacity: 0; }
+}
+@keyframes riseUpRight {
+  0% { transform: translateX(0) translateY(110vh); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100px) translateY(-100px); opacity: 0; }
+}
+@keyframes riseUpLeft {
+  0% { transform: translateX(0) translateY(110vh); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(-100px) translateY(-100px); opacity: 0; }
+}
+
+.fall-down-right { animation: fallDownRight 8s infinite; }
+.fall-down-left { animation: fallDownLeft 8s infinite; }
+.rise-up-right { animation: riseUpRight 8s infinite; }
+.rise-up-left { animation: riseUpLeft 8s infinite; }
+
+.photo1 { top: -100px; left: 50px; animation-delay: 0s; }
+.photo2 { top: -100px; left: 150px; animation-delay: 1.5s; }
+.photo3 { top: 110vh; left: 250px; animation-delay: 3s; }
+.photo4 { top: 110vh; left: 360px; animation-delay: 4.5s; }
+.photo5 { top: -100px; left: 450px; animation-delay: 0.5s; }
+.photo6 { top: -100px; left: 550px; animation-delay: 2s; }
+.photo7 { top: 110vh; left: 650px; animation-delay: 3.5s; }
+.photo8 { top: 110vh; left: 750px; animation-delay: 5s; }
+.photo9 { top: -100px; left: 850px; animation-delay: 1s; }
+.photo10 { top: -100px; left: 950px; animation-delay: 2.5s; }
+.photo11 { top: 110vh; left: 1050px; animation-delay: 4s; }
+.photo12 { top: 110vh; left: 1150px; animation-delay: 5.5s; }
+
+.audio-player {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2;
+  background: rgba(255, 182, 193, 0.8); /* ពណ៌ផ្កាឈូកស្រអាប់ */
+  border-radius: 15px;
+  padding: 15px;
+  color: white;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+  width: 300px;
+  backdrop-filter: blur(5px); /* បន្ថែមឥទ្ធិពលស្រអាប់ */
+  border: 1px solid #ff69b4;
+}
+.audio-player h3 {
+  margin: 0 0 10px 0;
+  color: white;
+  text-shadow: 1px 1px 2px #d64585;
+}
+.audio-player button {
+  background: transparent;
+  border: 1px solid #be005f;
+  color: #df1781;
+}
+.audio-player button:hover {
+  background: #ff85c1;
+}
+
+.falling-text {
+  position: absolute;
+  top: -50px;
+  font-size: 2rem;
+  color: white;
+  opacity: 0.8;
+  animation: fall linear infinite;
+  pointer-events: none;
+  user-select: none;
+}
+@keyframes fall {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(110vh); opacity: 0; }
+}
+
+.falling-photo-small {
+  position: absolute;
+  top: -50px;
+  width: 30px;
+  height: auto;
+  opacity: 0.8;
+  pointer-events: none;
+  user-select: none;
+  animation: fallImg linear 1;
+}
+@keyframes fallImg {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(110vh); opacity: 0; }
+}
